@@ -1,0 +1,370 @@
+*{
+  box-sizing: border-box;
+}
+.content{
+  margin: 0px;
+  padding: 0px;
+}
+.contenedor_all{
+  margin: 0px;
+  padding: 0px;
+  display: none;
+/*  display: flex;*/
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+}
+.contenedor_all::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+.contenedor_all::-webkit-scrollbar-thumb {
+  background: #24546f;
+  border-radius: 4px;
+}
+.contenedor_all::-webkit-scrollbar-thumb:hover {
+  background: #3C8DBC;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.contenedor_all::-webkit-scrollbar-thumb:active {
+  background-color: #3C8DBC;
+}
+.contenedor_all::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+.contenedor_all::-webkit-scrollbar-track:hover,
+.contenedor_all::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+.contenedor{
+  margin: 3px;
+  padding: 10px;
+  display: inline-flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+  background: #222D32;
+  border-radius: 2px;
+  width: auto;
+}
+.contenedor h2{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: solid 1px white;
+}
+.contenedor .resultados{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  z-index: 100;
+}
+.contenedor .resultados .lista{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 550px;
+  margin: 0px 3px;
+}
+.contenedor .resultados .lista .label_votos{
+  display: block;
+  background: #3C8DBC;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 18px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.contenedor .resultados .lista .label_votos span{
+  display: block;
+  font-size: 40px;
+}
+.contenedor .resultados .lista .barra_procentual{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.contenedor .resultados .lista .barra_procentual .porcentaje{
+  display: block;
+  background-image: linear-gradient(to right, rgb(60, 141, 188) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 23%,rgba(60, 141, 188) 100% );
+  width: 100%;
+  height: 0%;
+  position: relative;
+  transition: all 1s ease;
+  margin-bottom: 25px;
+}
+.contenedor .resultados .lista .barra_procentual .porcentaje:before,
+.contenedor .resultados .lista .barra_procentual .porcentaje:after{
+  position: absolute;
+  content: '';
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  border-radius: 50%;
+}
+.contenedor .resultados .lista .barra_procentual .porcentaje:before{
+  background: #3c8dbc;
+  top: -20px;
+  z-index: 100;
+}
+.contenedor .resultados .lista .barra_procentual .porcentaje:after{
+  background-image: linear-gradient(to right, rgb(60, 141, 188) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 23%,rgba(60, 141, 188) 100% );
+  bottom: -20px;
+  z-index: -10;
+}
+.contenedor .resultados .lista .barra_procentual .porcentaje label{
+  position: absolute;
+  text-shadow: 0px 2px 5px white;
+  width: 100%;
+  text-align: center;
+  color: black;
+  top: -15px;
+  font-size: 20px;
+  z-index: 400;
+}
+.contenedor .resultados .lista img{
+  width: 100%;
+  height: 130px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border: solid 1px black;
+  background: white;
+  filter: brightness(0.8);
+}
+.contenedor .resultados .lista h3{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 5px 0px;
+  background: #3C8DBC;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+
+
+
+
+
+.content_ganador{
+  position: absolute;
+/*  display: flex;*/
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 200;
+}
+.content_ganador .ganador{
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  height: 100%;
+  max-height: 550px;
+  background: #222D32;
+  border-radius: 3px;
+}
+.content_ganador .ganador .header_ganador{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 3px #23516c;
+  background-image: linear-gradient(white 0%, #3C8DBC 20%);
+}
+.content_ganador .ganador .header_ganador .titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+.content_ganador .ganador .header_ganador .cerrar{
+  width: 40px;
+  height: 100%;
+}
+.content_ganador .ganador .header_ganador .cerrar img{
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+.content_ganador .ganador .header_ganador .cerrar img:hover{
+  background: #d9d9d9;
+}
+
+.content_ganador .ganador .candidatos{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.content_ganador .ganador .candidatos .candidatos_item{
+  background: blue;
+  width: 130px;
+  height: 200px;
+  border-radius: 10px;
+  background: #3C8DBC;
+  margin: 0px 4px;
+  margin-bottom: 5px;
+  padding-top: 30px;
+}
+.content_ganador .ganador .candidatos .candidatos_item img{
+  background: white;
+  width: 100%;
+  height: 80%;
+}
+.content_ganador .ganador .candidatos .candidatos_item h3,
+.content_ganador .ganador .candidatos .candidatos_item h4{
+  font-size: 15px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+.content_ganador .ganador .candidatos .candidatos_item h3{
+  font-weight: bold;
+}
+.content_ganador .ganador .candidatos .candidatos_item h4{
+  font-size: 15px;
+}
+.content_ganador .ganador .votos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-top: solid 1px #fff;
+}
+.content_ganador .ganador .votos .item_votos{
+  width: 200px;
+  height: 250px;
+  background: #3C8DBC;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: solid 1px white;
+}
+.content_ganador .ganador .votos .item_votos h1,
+.content_ganador .ganador .votos .item_votos h3{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0px;
+}
+.content_ganador .ganador .votos .item_votos h3{
+  height: 50%;
+  font-size: 20px;
+}
+.content_ganador .ganador .votos .item_votos h1{
+  border-top: solid 1px white;
+  border-radius: 10px;
+  height: 50%;
+  font-size: 80px;
+  font-weight: bold;
+}
+.content_ganador .ganador .votos .item_votos:last-child h1{
+  color: #005200;
+}
+.content_ganador .ganador .votos .item_votos:last-child h3{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.content_ganador .ganador .footer_ganador{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-top: solid 3px #23516c;
+  background-image: linear-gradient(#3C8DBC 80%, white 100%);
+}
+.content_ganador .ganador .footer_ganador .titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
+  
+}
+
+
+
+
+
+.content-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.timer{
+  cursor: pointer;
+  display: none;
+/*  display: block;*/
+  width: 600px;
+  text-align: center;
+  padding: 0px;
+  font-size: 15rem;
+  color: #3C8DBC;
+  border-top: solid 3px #3C8DBC;
+  border-bottom: solid 3px #3C8DBC;
+  border-radius: 50px;
+}
+@media (max-width: 850px){
+  .timer{
+    margin: auto;
+    margin-top: 0px;
+    width: 90%;
+    font-size: 5rem;
+  }
+  .content-wrapper{
+    padding-top: 100px;
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

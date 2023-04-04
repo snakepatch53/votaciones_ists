@@ -1,0 +1,179 @@
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.content{
+  background: #dcdcdc;
+}
+content{
+  padding: 5px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+}
+content .titulo_listas_disp{
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+  display: block;
+  margin: 25px 0px;
+}
+
+content .listas{/*Este es el formulario*/
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  height: auto;
+  background: white;
+  display: block;
+  justify-content: center;
+  border-radius: 5px;
+}
+content .listas .lista_item{
+  display: inline-block;
+  margin: 10px 23px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px gray;
+}
+content .listas .lista_item .foto_presi{
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 5px;
+}
+content .listas .lista_item .nombre_presi{
+  display: block;
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 0px 0px;
+}
+content .listas .lista_item .casilla_voto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px gray;
+  border-radius: 3px;
+  margin: 5px;
+  height: 130px;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]{
+  display: block;
+  position: relative;
+  width: 70%;
+  height: 3px;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]:before,
+content .listas .lista_item .casilla_voto input[type="radio"]:after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 50%;
+  background: black;
+  transition: all 0.4s ease;
+  border-radius: 10%;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]:after{
+  width: 0%;
+  top: -1900%;
+  right: 25%;
+  background: red;
+  transform: rotate(-60deg);
+  border-radius: 30%;
+}
+content .listas .lista_item .casilla_voto:hover input[type="radio"]:after{
+  top: 0%;
+  right: 0%;
+  width: 100%;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]:checked:after{
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  height: 3px;
+  background: blue;
+  animation: elegir 0.5s ease;
+}
+@keyframes elegir{
+  from{
+    background: white;
+    height: 10px;
+    width: 105%;
+  }
+  to{
+    background: blue;
+    height: 3px;
+    width: 100%;
+  }
+}
+content .credenciales{
+  background: rgba(0,0,0,0.3);
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+content .credenciales label{
+  color: black;
+  font-family: monospace;
+  font-size: 12px;
+}
+content .credenciales #mensaje{
+  color: #be0000;
+  font-size: 14px;
+}
+content .credenciales input{
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 5px;
+  margin: 15px auto;
+  text-align: center;
+  border-radius: 1px;
+  border-style: none;
+  font-size: 17px;
+  box-shadow: 0 0 3px 3px gray;
+  transition: all 0.3s ease;
+}
+content .credenciales input:hover{
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+content .credenciales input[type="button"]{
+  background: #257136;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+content .credenciales input[type="button"]:hover{
+  background: #184b24;
+}
+
+@media (max-width: 800px){
+  content .listas .lista_item .casilla_voto input[type="radio"]:after{
+    width: 0%;
+    top: -1000%;
+    right: -20%;
+  }
+  content .listas .lista_item{
+    margin: 10px 0px;
+    max-width: 160px;
+  }
+  content .listas .lista_item .casilla_voto{
+    margin: 5px;
+    height: 100px;
+  }
+  content .titulo_votaciones{
+    font-size: 13px;
+    line-height: 15px;
+    margin: -10 auto;
+  }
+  content .titulo_listas_disp{
+    margin-top: 70px;
+  }
+}

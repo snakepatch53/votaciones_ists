@@ -1,0 +1,94 @@
+<html>
+  <head>
+   <title>Votaciones ISTS</title>
+   <meta charset="utf-8">
+   <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0'/>
+   <link rel="icon" href="imgs/logo.png">
+   <link rel="stylesheet" href="css/index.css">
+   <script src="js/index.js"></script>
+   <script src="ajax/js/conexion_ajax.js"></script>
+<!--   <script src="ajax/js/listas.js"></script>-->
+  </head>
+  <body>
+    <header>
+      <img class="img_logo" src="imgs/logo.png" id="img_logo_ini">
+      <label>INSTITUTO SUCUA</label>
+      <nav>
+        <a href="index.html">Inicio</a>
+      </nav>
+      <nav class="last_item">
+        <a  href="administracion/login">
+          Iniciar Sesion<img src="imgs/desplegar.png" class="img_desplegar">
+        </a>
+        <ul>
+          <li>
+            <a href="administracion/login/index.php?administrador" style="display: flex;align-items: center;justify-content: flex-start">
+               Administrador<img src="imgs/iniciarSesion.png" class="img_desplegar">
+            </a>
+          </li>
+          <li>
+            <a href="administracion/login/index.php?candidato" style="display: flex;align-items: center;justify-content: flex-start">
+              Candidato<img src="imgs/iniciarSesion.png" class="img_desplegar">
+            </a>
+          </li>
+          <li>
+            <a href="administracion/login/index.php?votante" style="display: flex;align-items: center;justify-content: flex-start">
+              Votante<img src="imgs/iniciarSesion.png" class="img_desplegar">
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <a href="paginas/votar.php">Votar</a>
+      </nav>
+<!--      DESHABILITO LOS RESULTADOS POR QUE CONSUMEN RECURSOS EN CONSULTA, LO QUE PUEDE AFECTAR A LA HORA DE MOSTRAR LOS RESULTADOS FINALES-->
+<!--
+      <nav>
+        <a onclick="cargar_pagina('administracion/enlace_inicioTOResultados.php'); ocultar('slider');src('img_logo_ini','imgs/transparente.png');">Resultados</a>
+      </nav>
+-->
+      <img class="img_menu" src="imgs/menu.png" onclick="abrir_menu_movil()">
+      <img class="img_salir" src="imgs/salir.png" onclick="cerrar_menu_movil()">
+    </header>
+    <div class="slider" id="slider">
+      <ul>
+        <li><img src="imgs/slider/1.jpg"></li>
+        <li><img src="imgs/slider/2.png"></li>
+        <li><img src="imgs/slider/3.png"></li>
+        <li><img src="imgs/slider/4.png"></li>
+      </ul>
+    </div>
+    <iframe src="paginas/inicio.php" id="iframe_contenido" onload="resizeIframe()"></iframe>
+    <footer>
+      <a href="index.html">Inicio</a>
+      <a href="paginas/votar.php">Votar</a>
+      <a href="administracion/login">Iniciar Sesion</a>
+      <a onclick="cargar_pagina('administracion/enlace_inicioTOResultados.php'); ocultar('slider');src('img_logo_ini','imgs/transparente.png');" style="text-decoration: underline">Resultados</a>
+      <a href="#">Desarrolladores</a>
+      <span>Copyright <img src="imgs/copyright.png"><a href="https://www.facebook.com/Programarte-453395385426480/" target="_blank">Programarte</a> 2019. Todos los derechos   reservados</span>
+    </footer>
+    
+    
+    <div class="video_modal">
+      <button onclick="cerrarVideoModal()"><img src="imgs/salir.png"></button>
+      <span>TUTORIAL BASICO DE VOTACION</span>
+      <video src="" id="video_modal_mp4" controls="true" autoplay></video>
+    </div>
+    
+    
+  </body>
+  <script>
+    window.onload=function() {
+      var video = document.getElementById("video_modal_mp4");
+      video.src = "tutorial/tutorial.mp4";
+      video.autoplay = true;
+      video.load();
+      //setTimeout(cerrarVideoModal(), 1000);
+    }
+    function cerrarVideoModal(){
+      document.querySelector(".video_modal").style.display = "none";
+      var video = document.getElementById("video_modal_mp4");
+      video.src="";
+    }
+  </script>
+</html>

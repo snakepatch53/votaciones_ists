@@ -1,0 +1,322 @@
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  margin: 0;
+  background: #222D32;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header{
+  background: white;
+  background-image: url('../imgs/fondo_header_votar.png');
+  background-size: 950px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+header a{
+  width: 70px;
+  height: 50px;
+}
+header a img{
+  width: 100%;
+  height: 100%;
+  transform: scale(1.4);
+}
+header label{
+  display: flex;
+  align-items: center;
+  margin-left: 7px;
+  font-size: 15px;
+  font-weight: bold;
+}
+header div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+header div a:nth-last-child(1){
+  margin-right: 50px;
+}
+header div a{
+  position: relative;
+  text-decoration: none;
+  color: black;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+header div a:before{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 5px;
+  bottom: 0;
+  left: 50%;
+  background: #257136;
+  transition: all 0.4s ease;
+}
+header div a:hover:before{
+  width: 100%;
+  left: 0;
+}
+header div a:hover{
+  background: gray;
+  color: #fff;
+  border-radius: 3px;
+}
+content{
+  padding: 5px 5px 0 5px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+content .indicaciones{
+  position: absolute;
+  text-align: left;
+  padding-left: 10px;
+  border-radius: 7px;
+  background: rgba(0,0,0,0.5);
+}
+content .indicaciones .titulo_votaciones{
+  color: #257136;
+  font-size: 11px;
+  line-height: 17px;
+  text-shadow: 0px 1px 1px #000,
+               0px -1px 1px #000,
+               1px 1px 1px #000,
+               -1px 1px 1px #000;
+}
+content .indicaciones .titulo_votaciones b{
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #9c0000;
+}
+
+
+
+
+
+
+
+
+
+content .titulo_listas_disp{
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  display: block;
+  margin: 0 0 0px 0;
+}
+
+content .listas{/*Este es el formulario*/
+  width: 100%;
+  max-width: 800px;
+  margin: 5px auto;
+  height: auto;
+  background: white;
+  display: block;
+  justify-content: center;
+  border-radius: 5px;
+}
+content .listas .lista_item{
+  display: inline-block;
+  margin: 10px 5px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px gray;
+}
+content .listas .lista_item .foto_presi{
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 5px;
+}
+content .listas .lista_item .nombre_presi{
+  display: block;
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 0px 0px;
+}
+content .listas .lista_item .casilla_voto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px gray;
+  border-radius: 3px;
+  margin: 5px;
+  height: 130px;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]{
+  display: block;
+  position: relative;
+  width: 70%;
+  height: 3px;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]:before,
+content .listas .lista_item .casilla_voto input[type="radio"]:after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 50%;
+  background: black;
+  transition: all 0.4s ease;
+  border-radius: 10%;
+  height: 60%;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]:after{
+  width: 0%;
+  top: -1900%;
+  right: 25%;
+  background: #c20000;
+  transform: rotate(-60deg);
+  border-radius: 30%;
+}
+content .listas .lista_item .casilla_voto:hover input[type="radio"]:after{
+  top: 0%;
+  right: 0%;
+  width: 100%;
+}
+content .listas .lista_item .casilla_voto input[type="radio"]:checked:after{
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  height: 3px;
+  background: blue;
+  animation: elegir 0.5s ease;
+}
+@keyframes elegir{
+  from{
+    background: white;
+    height: 10px;
+    width: 105%;
+  }
+  to{
+    background: blue;
+    height: 3px;
+    width: 100%;
+  }
+}
+content .credenciales{
+  background: rgba(0,0,0,0.3);
+  width: 100%;
+  margin: auto;
+  padding: 1px;
+}
+content .credenciales label{
+  color: black;
+  font-family: monospace;
+  font-size: 12px;
+}
+content .credenciales #mensaje{
+  color: #be0000;
+  font-size: 14px;
+}
+content .credenciales input{
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 5px;
+  margin: 5px auto;
+  text-align: center;
+  border-radius: 1px;
+  border-style: none;
+  font-size: 17px;
+  box-shadow: 0 0 3px 3px gray;
+  transition: all 0.3s ease;
+}
+content .credenciales input:hover{
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+content .credenciales input[type="button"]{
+  background: #257136;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+content .credenciales input[type="button"]:hover{
+  background: #184b24;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  width: 100%;
+  background: white;
+  background-image: url('../imgs/fondo_header_votar.png');
+  background-size: 1700px;
+  padding: 10px 0px;
+  text-align: center;
+}
+footer img{
+  width: 14px;
+}
+footer a{
+  margin: 5px;
+  color: black;
+}
+footer span{
+  margin: 30px auto;
+  padding-top: 10px;
+  width: 100%;
+  border-top: solid 1px gray;
+  color: gray;
+  display: block;
+  max-width: 1200px;
+}
+
+@media (max-width: 800px){
+  content .listas .lista_item .casilla_voto input[type="radio"]:after{
+    width: 0%;
+    top: -1000%;
+    right: -20%;
+  }
+  content .listas .lista_item{
+    margin: 10px 0px;
+    max-width: 160px;
+  }
+  content .listas .lista_item .casilla_voto{
+    margin: 5px;
+    height: 100px;
+  }
+  
+  header label{
+    display: none;
+  }
+  header div a:nth-last-child(1){
+    margin-right: 0px;
+  }
+  content .titulo_votaciones{
+    font-size: 13px;
+    line-height: 15px;
+    margin: -10 auto;
+  }
+  content .titulo_listas_disp{
+    margin-top: 70px;
+  }
+}
